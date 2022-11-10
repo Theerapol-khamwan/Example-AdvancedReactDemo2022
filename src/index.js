@@ -1,24 +1,27 @@
-import React, { useEffect, useState } from 'react'; // JSX
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import React, { useEffect, useState } from "react"; // JSX
+import ReactDOM from "react-dom/client";
+import "./index.css";
 // import App from './Components/App';
 // import MyComponent from './Components/MyComponent';
-import MyComponent2 from './Components/MyComponent2';
-import reportWebVitals from './reportWebVitals';
-import MyContextProvider from './Components/MyContextProvider';
+import MyComponent2 from "./Components/MyComponent2";
+import reportWebVitals from "./reportWebVitals";
+import MyContextProvider from "./Components/MyContextProvider";
+import ErrorBoundary from "./Components/ErrorBoundary/ErrorBoundary";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-  <MyContextProvider>
-  { /* <App /> */ }
-  { /* <MyComponent name="Gawee" /> */ }
-  { /* <MyChatContextProvider>
+    <MyContextProvider>
+      {/* <App /> */}
+      {/* <MyComponent name="Gawee" /> */}
+      {/* <MyChatContextProvider>
       <Chat />
       <ChatToolbar />
-</MyChatContextProvider>*/ }
-    <MyComponent2 />
-  </MyContextProvider>
+</MyChatContextProvider>*/}
+      <ErrorBoundary>
+        <MyComponent2 />
+      </ErrorBoundary>
+    </MyContextProvider>
   </React.StrictMode>
 );
 
